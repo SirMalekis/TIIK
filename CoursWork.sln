@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoursWork", "CoursWork.csproj", "{212E161E-0E17-4194-BDEC-43162818A898}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{212E161E-0E17-4194-BDEC-43162818A898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212E161E-0E17-4194-BDEC-43162818A898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212E161E-0E17-4194-BDEC-43162818A898}.Debug|x64.ActiveCfg = Debug|x64
+		{212E161E-0E17-4194-BDEC-43162818A898}.Debug|x64.Build.0 = Debug|x64
+		{212E161E-0E17-4194-BDEC-43162818A898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212E161E-0E17-4194-BDEC-43162818A898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212E161E-0E17-4194-BDEC-43162818A898}.Release|x64.ActiveCfg = Release|x64
+		{212E161E-0E17-4194-BDEC-43162818A898}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81F57E5D-F0E5-43BC-BD6F-252F607E5769}
+	EndGlobalSection
+EndGlobal
