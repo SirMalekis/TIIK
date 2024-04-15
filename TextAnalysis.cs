@@ -8,10 +8,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CoursWork
 {
-    internal class WorkWithLetters
+    internal class TextAnalysis
     {
         private readonly WorkWithText _texts;
-        public WorkWithLetters(WorkWithText texts)
+        public TextAnalysis(WorkWithText texts)
         {
             _texts = texts;
         }
