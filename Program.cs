@@ -46,17 +46,37 @@ namespace CoursWork
                 else
                 {
                     Console.WriteLine("Введите число из предложенных!");
-                    Console.Write("Введие значение: ");
+                    Console.Write("Введите значение: ");
                     typeOfText = int.Parse(Console.ReadLine());
                     Console.WriteLine();
                 }
             } while(i != typeOfText);
 
             texts.WriteToFileConvertedTexts(nameOfText);
-            letters.OutputCountLettersInText(nameOfText);
-            letters.FrequenciesOfLetters(nameOfText);
-            
-        }
 
+            Console.Write($"Кол-во букв в тексте: {letters.CountLettersInText(nameOfText)}");
+
+            Console.WriteLine("\n");
+
+            char[] arrayOfLettersItSelf = letters.ArrayOfLettersItSelf(nameOfText);
+            int[] NumOfEachLetter = letters.NumOfEachLetter(nameOfText);
+            double[] FrequenciesOfLetters = letters.FrequencyOfEachLetter(nameOfText);
+
+            Console.WriteLine("Кол-во каждой буквы текста:");
+            for (i = 0; i < arrayOfLettersItSelf.Length; i++)
+            {
+                Console.WriteLine($"{arrayOfLettersItSelf[i]} : {NumOfEachLetter[i]}");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Частота каждоый буквы текста:");
+            for (i = 0; i < arrayOfLettersItSelf.Length; i++)
+            {
+                Console.WriteLine($"{arrayOfLettersItSelf[i]} : {FrequenciesOfLetters[i]}");
+            }
+
+
+        }
     }
 }
