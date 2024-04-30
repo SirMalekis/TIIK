@@ -11,7 +11,8 @@ namespace CoursWork
         static void Main(string[] args) 
         {
             var texts = new WorkWithText();
-            var letters = new WorkWithLetters(texts);
+            var letters = new TextAnalysis(texts);
+            var cods = new CodingLetters();
             string nameOfText = "NULL";
             string nameOfArtisticText = "ArtisticText.txt";
             string nameOfScientisticText = "ScientisticText.txt";
@@ -46,17 +47,57 @@ namespace CoursWork
                 else
                 {
                     Console.WriteLine("Введите число из предложенных!");
-                    Console.Write("Введие значение: ");
+                    Console.Write("Введите значение: ");
                     typeOfText = int.Parse(Console.ReadLine());
                     Console.WriteLine();
                 }
             } while(i != typeOfText);
 
             texts.WriteToFileConvertedTexts(nameOfText);
-            letters.OutputCountLettersInText(nameOfText);
-            letters.FrequenciesOfLetters(nameOfText);
+
+            Console.Write($"Кол-во букв в тексте: {letters.CountLettersInText(nameOfText)}");
+
+            Console.WriteLine("\n");
+
+            char[] arrayOfLettersItSelf = letters.ArrayOfLettersItSelf(nameOfText);
+            int[] numOfEachLetter = letters.NumOfEachLetter(nameOfText);
+            double[] frequenciesOfLetters = letters.FrequencyOfEachLetter(nameOfText);
+
+            Console.WriteLine("Кол-во каждой буквы текста:");
+            for (i = 0; i < arrayOfLettersItSelf.Length; i++)
+            {
+                Console.WriteLine($"{arrayOfLettersItSelf[i]} : {numOfEachLetter[i]}");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Частота каждоый буквы текста:");
+            for (i = 0; i < arrayOfLettersItSelf.Length; i++)
+            {
+                Console.WriteLine($"{arrayOfLettersItSelf[i]} : {frequenciesOfLetters[i]}");
+            }
+
+            //cods.ShannonFanoCoding(arrayOfLettersItSelf, numOfEachLetter, frequenciesOfLetters);
+
+            if(typeOfText == 1)
+            {
+                cods.Fano(0, 31, frequenciesOfLetters);
+
+                for (i = 0; i < 32; i++)
+                {
+                    Console.WriteLine(arrayOfLettersItSelf[i] + " : " + cods.Res[i]);
+                }
+            }
+            else if (typeOfText == 2) 
+            {
+                cods.Fano(0, 32, frequenciesOfLetters);
+
+                for (i = 0; i < 33; i++)
+                {
+                    Console.WriteLine(arrayOfLettersItSelf[i] + " : " + cods.Res[i]);
+                }
+            }
             
         }
-
     }
 }
